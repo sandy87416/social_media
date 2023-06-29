@@ -8,9 +8,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostDaoImpl {
+public class PostDaoImpl implements PostDAO{
     final private DBConnection dbConnection = new DBConnectionImpl();
 
+    @Override
     public List<Post> getPost(){
         Connection connection = dbConnection.getConnection();
         List<Post> postList = new ArrayList<>();
@@ -31,6 +32,7 @@ public class PostDaoImpl {
         }
         return postList;
     }
+    @Override
     public List<Post> getPostByUserID(String userID){
         Connection connection = dbConnection.getConnection();
         List<Post> postList = new ArrayList<>();
@@ -53,6 +55,7 @@ public class PostDaoImpl {
         return postList;
     }
 
+    @Override
     public void createPost(Post post){
         Connection connection = dbConnection.getConnection();
         String INSERT_POST = "INSERT INTO post (user_id, content, image, create_at) values(?,?,?,?)";

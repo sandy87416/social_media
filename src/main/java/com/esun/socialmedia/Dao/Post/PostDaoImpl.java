@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostDaoImpl {
+public class PostDaoImpl implements PostDAO {
     final private DBConnection dbConnection = new DBConnectionImpl();
 
     public List<Post> getPost(){

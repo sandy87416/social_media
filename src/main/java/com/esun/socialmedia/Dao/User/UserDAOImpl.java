@@ -13,19 +13,19 @@ public class UserDAOImpl implements UserDAO {
 
     private DBConnection dbConnection = new DBConnectionImpl();
     @Override
-    public User getUser(String user_id, String password) {
+    public User getUser(String userID, String password) {
 
         Connection connection = dbConnection.getConnection();
         User user = null;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement("SELECT * FROM user WHERE user_id = ? AND password = ?");
-            preparedStatement.setString(1, user_id);
+            preparedStatement.setString(1, userID);
             preparedStatement.setString(2, password);
 
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
-            user = new User(user_id, password);
+            user = new User(userID, password);
             user.setUserName(resultSet.getString("user_name"));
             user.setBiography(resultSet.getString("biography"));
             user.setCoverImage(resultSet.getString("cover_image"));

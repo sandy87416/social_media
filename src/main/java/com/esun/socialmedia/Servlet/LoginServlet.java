@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class LoginServlet extends HttpServlet {
     @RequestMapping("/")
-    public String hello(HttpSession session){
+    public String main(HttpSession session){
         return "Home Page";
     }
 
@@ -22,12 +22,6 @@ public class LoginServlet extends HttpServlet {
         boolean result = loginService.login(session, userID, password);
         if(result)  return "登入成功";
         return "登入失敗";
-    }
-
-    @GetMapping("/postPage")
-    public List<Post> login(){
-        PostService postService = new PostService();
-        return postService.getAllPost();
     }
 
 }

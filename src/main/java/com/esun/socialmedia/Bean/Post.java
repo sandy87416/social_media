@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Post {
-    private int postID = -1;
+    private int postID;
     private String userID = "";
     private String content = "";
     private String image = "";

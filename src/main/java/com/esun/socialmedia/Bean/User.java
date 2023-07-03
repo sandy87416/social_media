@@ -1,4 +1,5 @@
 package com.esun.socialmedia.Bean;
+
 public class User {
     private String userID = "";
     private String userName = "";
@@ -16,9 +17,8 @@ public class User {
         this.biography = biography;
     }
 
-    public User(String userID, String password) {
+    public User(String userID) {
         this.userID = userID;
-        this.password = password;
     }
 
     public String getUserName() {
@@ -61,4 +61,7 @@ public class User {
         this.biography = biography;
     }
 
+    public String getUserID() {
+        return userID;
+    }
 }

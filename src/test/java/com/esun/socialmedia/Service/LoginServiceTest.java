@@ -3,12 +3,9 @@ package com.esun.socialmedia.Service;
 import com.esun.socialmedia.Bean.User;
 import com.esun.socialmedia.Dao.User.UserDAO;
 import com.esun.socialmedia.Dao.User.UserDAOImpl;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Before;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.After;
 import org.junit.jupiter.api.Test;
 
 
@@ -36,7 +33,7 @@ class LoginServiceTest {
         assertNotNull(user);
     }
 
-    @After("")
+    @After
     void tearDown() {
         UserDAO userDAO = new UserDAOImpl();
         String userID = "testUserID";
